@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<project name="TriangleRaster" default="compile">
+	<target name="compile">
+		<mkdir dir="build"/>
+		<javac srcdir="." destdir="build"/>
+	</target>
+	<target name="jar" depends="compile">
+		<jar destfile="TriangleRaster.jar">
+			<fileset dir="build" includes="**/*.class"/>
+			<manifest>
+				<attribute name="Main-Class" value="TriangleRaster"/>
+			</manifest>
+		</jar>
+	</target>
+	<target name="clean">
+		<delete dir="build"/>
+	</target>
+</project>
